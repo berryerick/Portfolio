@@ -1,6 +1,6 @@
-var mean_belt = angular.module('portfolio', ['ngRoute'])
+var portfolio = angular.module('portfolio', ['ngMaterial', 'ngRoute'])
 
-mean_belt.config(function($routeProvider){
+portfolio.config(function($routeProvider){
 
   $routeProvider
   .when('/about',{
