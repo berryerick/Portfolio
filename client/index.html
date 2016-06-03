@@ -11,6 +11,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
 
 
+    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Erick Berry</title>
@@ -21,26 +23,64 @@
 
   </head>
   <body >
-      <header>
-        <div class="header-title">
-          <h1 id="my-name">Erick Berry</h1>
-          <h3 id="my-title">full stack web developer</h3>
+      <div class="container" ng-controller="mainController as MC">
+
+        <md-toolbar layout='row'>
+
+          <md-button ng-click="MC.toggleMenu()" id="menu" hide-gt-sm aria-label="menu"><md-icon md-svg-icon="menu"/></md-button>
+
+          <div class="header-title" flex layout-sm="column">
+            <h1 class="md-display-2" id="my-name" flex flex-gt-sm="40">Erick Berry</h1>
+            <h3 class="md-headline" id="my-title" flex flex-gt-sm="50">full stack web developer</h3>
+          </div>
+
+          <div class="header-links" flex="15" layout="row" layout-align="space-around">
+            <a href="https://www.linkedin.com/profile/view?id=AAMAAAqjcDUB_U8WAzLMlFAcs42BVRW3fZF9dFY&trk=hp-identity-name">
+              <md-icon class="header-icon"  md-svg-icon="linkedin"/>
+            </a>
+            <a href="mailto:berryerick@gmail.com?subject=RE: your portfolio">
+              <md-icon class="header-icon" md-svg-src="/img/mail.svg"/>
+            </a>
+          </div>
+
+        </md-toolbar>
+
+        <div class="main" layout="row" layout-align="center">
+            <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="nav" layout-align-gt-sm layout-align="start end" flex flex-gt-sm="20">
+             <md-list  layout="column" ng-click="MC.toggleMenu()" md-margin="">
+               <md-list-item flex>
+                 <a href="#/about" flex="100">
+                 <md-button class="nav-button" flex="100">
+                   About
+                 </md-button>
+                 </a>
+               </md-list-item>
+               <md-list-item flex>
+                 <a href="#/web-projects" flex="100">
+                 <md-button class="nav-button">
+                   Web Projects
+                 </md-button>
+                 </a>
+               </md-list-item>
+               <md-list-item flex>
+                 <a href="#/design" flex="100">
+                 <md-button class="nav-button">
+                   Design
+                 </md-button>
+                 </a>
+               </md-list-item>
+             </md-list>
+           </md-sidenav>
+
+
+          <div ng-view="" flex flex-gt-sm="70" class="md-whitefrmae-4dp">
+
+          </div>
+
         </div>
-        <div class="header-links">
-          <a class=  href="https://www.linkedin.com/profile/view?id=AAMAAAqjcDUB_U8WAzLMlFAcs42BVRW3fZF9dFY&trk=hp-identity-name">
-            <img class="header-link" src="/img/linkedin.png" alt="Linked In Profile"/>
-          </a>
-          <a href="mailto:berryerick@gmail.com?subject=RE: your portfolio">
-            <img class="header-link" src="/img/mail.png" alt="email" />
-          </a>
-
-
-        </div>
-
-      </header>
-      <div ng-view="">
 
       </div>
+
 
 
   </body>

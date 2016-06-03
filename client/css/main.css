@@ -6,3 +6,41 @@
 * {
   /*font-family: sans-serif;*/
 }
+
+header{
+
+}
+  h1#my-name{
+    display: inline-block;
+    margin: 10px;
+  }
+  h3#my-title{
+    display: inline-block;
+    margin: 10px;
+  }
+
+  div.header-links{
+    display: inline-block;
+    margin: auto;
+  }
+  div.header-links a{
+    margin: 5px;
+  }
+  /*.header-icon{
+    margin: auto;
+    height: 40px;
+    width: 40px;
+  }*/
+div.main{
+padding-top: 20px;
+width: 100%;
+}
+  /*.sidenav{
+    box-shadow: 0 1px 3px black;
+  }*/
+    .nav-button{
+      width: 100%;
+      border-radius: none;
+      margin: 0;
+      padding: 0;
+    }
