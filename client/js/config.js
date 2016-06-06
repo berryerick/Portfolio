@@ -1,14 +1,6 @@
-var portfolio = angular.module('portfolio', ['ngMaterial', 'ngRoute'])
+var portfolio = angular.module('portfolio',  ['ngRoute'])
 
-portfolio.config(function($routeProvider, $mdIconProvider, $mdThemingProvider){
-  $mdIconProvider.icon('menu', './img/bars.svg', 200)
-  $mdIconProvider.icon('linkedin', './img/linkedin.svg', 200)
-
-  $mdThemingProvider.theme('default')
-    .primaryPalette('grey')
-    .accentPalette('teal')
-    // .dark()
-
+portfolio.config(function($routeProvider){
 
   $routeProvider
   .when('/about',{
@@ -16,6 +8,9 @@ portfolio.config(function($routeProvider, $mdIconProvider, $mdThemingProvider){
   })
   .when('/design',{
     templateUrl: "/partials/design.html"
+  })
+  .when('/projects',{
+    templateUrl: "/partials/projects.html"
   })
   .otherwise({
     redirectTo: '/about'

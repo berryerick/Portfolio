@@ -4,84 +4,81 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script src="./js/materialize.js" charset="utf-8"></script>
 
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <title>Erick Berry</title>
 
     <script src="./js/config.js"></script>
     <script src="./js/factories.js"></script>
     <script src="./js/controllers.js"></script>
+    <script src="./js/app_jquery.js"></script>
 
   </head>
-  <body >
-      <div class="container" ng-controller="mainController as MC">
+  <body class="">
+      <div class="" ng-controller="mainController as MC">
 
-        <header layout='row'>
 
-          <a class="btn-flat red " ng-click="MC.toggleMenu()" id="menu" hide-gt-sm><img src="/img/bars.svg"/></a>
-          <div class="header-title" flex layout-sm="column">
-            <h1 id="my-name">Erick Berry</h1>
-            <div hide show-gt-sm>
-              <h3 class="md-headline" id="my-title" flex-gt-sm="40" hide-gt-sm="t">full stack web developer</h3>
+        <nav id="fixed-nav"class="valign-wrapper row grey darken-3 ">
+          <a href="#" data-activates="slide-out" class="button-collapse s2 hide-on-large-only"><i class="material-icons left">menu</i></a>
+
+          <ul id="slide-out" class="side-nav">
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/projects">Projects</a></li>
+            <li><a href="#/design">Design</a></li>
+          </ul>
+
+          <!-- <div class="col s7 l7 center-align"> -->
+          <div class="main-title">
+            <a href="#/about"><h3 class='white-text valign' id="my-name">Erick Berry</h3></a>
+            <a href="#"><h5 class="hide-on-med-and-down white-text valign" id="my-title">full stack web developer</h5></a>
+          </div>
+
+          <div class="col s4 l3 right-align" >
+            <a class="btn-floating valing-wrapper" href="https://www.linkedin.com/profile/view?id=AAMAAAqjcDUB_U8WAzLMlFAcs42BVRW3fZF9dFY&trk=hp-identity-name">
+              <i class="material-icons"><img class="responsive-img valign" src='/img/linkedin.png' alt="" /></i>
+            </a>
+            <a class="btn-floating s2 waves-effect waves-light valign-wrapper" href="mailto:berryerick@gmail.com?subject=RE: your portfolio"><i class="material-icons valign">mail</i></a>
+          </div>
+        </nav>
+
+
+
+        <div class="row" id="main-content">
+          <nav class="white">
+
+          </nav>
+          <div class="col l12 hide-on-med-and-down no-padding card sidenav teal lighten-2 white-text">
+            <ul class="col l3 no-padding left">
+              <li><a href="#/about" ><h5 class="nav-button white-text waves-effect waves-light active">about</h5></a></li>
+              <li><a href="#/projects"><h5 class="nav-button white-text waves-effect waves-light">projects</h5></a></li>
+              <li><a href="#/design"><h5 class="nav-button white-text waves-effect waves-light">design</h5></a></li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="avatar col l3 hide-on-med-and-down">
+              <img src="/img/erick.jpg" alt="Profile image"  class="circle col l4 offset-l4 responsive-img center-align"/>
             </div>
-            <!--You can use md-no-sticky class-->
           </div>
 
-          <div class="header-links" flex="20" layout="row" layout-align="space-around">
-            <a class="fixed-action-btn" href="https://www.linkedin.com/profile/view?id=AAMAAAqjcDUB_U8WAzLMlFAcs42BVRW3fZF9dFY&trk=hp-identity-name" aria-label="linkedin Profile"  md-ripple-size="full|partial|auto">
-              <img class="header-icon"  md-svg-icon="linkedin"/>
-            </a>
-            <a href="mailto:berryerick@gmail.com?subject=RE: your portfolio" class="md-fab">
-              <img class="header-icon" md-svg-src="/img/mail.svg"/>
 
-            </a>
-          </div>
-
-        </header>
-
-        <!-- <div class="main" layout="row" layout-align="center">
-            <md-sidenav class="sidenav" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="nav" layout-align-gt-sm layout-align="start end" flex flex-gt-sm="20">
-             <md-list  layout="column" ng-click="MC.toggleMenu()" md-margin="">
-               <md-list-item flex>
-                 <a href="#/about" flex="100">
-                 <md-button class="nav-button" flex="100">
-                   About
-                 </md-button>
-                 </a>
-               </md-list-item>
-               <md-list-item flex>
-                 <a href="#/web-projects" flex="100">
-                 <md-button class="nav-button">
-                   Web Projects
-                 </md-button>
-                 </a>
-               </md-list-item>
-               <md-list-item flex>
-                 <a href="#/design" flex="100">
-                 <md-button class="nav-button">
-                   Design
-                 </md-button>
-                 </a>
-               </md-list-item>
-             </md-list>
-           </md-sidenav>
-
-
-          <div ng-view="" flex flex-gt-sm="80">
+          <div ng-view="">
 
           </div>
 
-        </div> -->
+
+        </div>
 
       </div>
+
 
 
 
