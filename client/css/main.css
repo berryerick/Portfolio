@@ -21,16 +21,16 @@ h5{
 nav#fixed-nav{
   position: absolute;
   z-index: 3;
-  /*margin-bottom:;*/
-  min-width: 320px;
-  /*min-height: 40px;*/
-  /*height: 8vh;*/
+  min-width: 290px;
 }
+
   div.main-title{
     padding-left: 15px;
+    max-height: 100%;
+    overflow: hidden;
   }
   #menu{
-    height: 100%;
+    /*height: 100%;*/
   }
   a.button-collapse{
     margin-right: 0;
@@ -38,18 +38,21 @@ nav#fixed-nav{
   #my-name{
     display: inline-block;
     font-weight: 200;
-    /*padding: 10px;*/
-    /*margin: 0px;*/
+    max-height: 100%;
+    /*min-width: 150px;*/
+    margin: auto 0px;
+    /*overflow-y: hidden;*/
   }
   #my-title{
     display: inline-block;
     font-weight: 300;
     font-variant: small-caps;
     padding-left: 10px;
+    margin: 0;
   }
   #slide-out{
     /*position: inherit;*/
-    z-index: 5
+    z-index: 5;
   }
   .icons{
     width: 70%;
@@ -57,7 +60,7 @@ nav#fixed-nav{
   }
 div.avatar{
   position: absolute;
-  margin-top: 20px;
+  margin-top: 10vh;
 }
 #sidenav-overlay{
   position: relative;
@@ -67,11 +70,14 @@ div.avatar{
 div#main-content{
 /*padding-top:*/
 position: absolute;
-/*width: 100%;*/
-height: 80vh;
+width: 100vw;
+height: 100vh;
+}
+nav{
+  height: 8vh;
 }
   .sidenav{
-    margin-top: 15vw;
+    margin-top: 30vh;
     position: absolute;
     /*box-shadow: 0 1px 3px black;*/
     border-radius: 0;
@@ -89,23 +95,16 @@ height: 80vh;
       background-color: rgba(255,255,255,0.3);
     }
 ul.modules{
-  height: 100vh;
+  height: 92vh;
   overflow-y: scroll;
-  /*margin-top: -20px;*/
+  /*padding-top: 10%;*/
 }
 li.module{
-  /*margin-top: -20px;*/
-  /*z-index: 0;*/
-  /*height: 200px;*/
 }
-  /*div.module-left{}
-  div.module-right{
-    text-align: center;
-    overflow-x: hidden;
-  }*/
-    /*img.module-img{
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-    }*/
+  li.module div.module-right{
+    max-height: 50vh;
+    overflow-y: hidden;
+  }
+    img.module-img{
+
+    }
