@@ -4,7 +4,7 @@
 
 }
 * {
-  /*font-family: sans-serif;*/
+  /*font-family: 'avenir', sans-serif;*/
 }
 body{
   position: fixed;
@@ -21,15 +21,19 @@ h5{
 nav#fixed-nav{
   position: absolute;
   z-index: 3;
-  margin-bottom:; ;
+  /*margin-bottom:;*/
+  min-width: 320px;
   /*min-height: 40px;*/
   /*height: 8vh;*/
 }
   div.main-title{
-    padding-left: 20px;
+    padding-left: 15px;
   }
   #menu{
     height: 100%;
+  }
+  a.button-collapse{
+    margin-right: 0;
   }
   #my-name{
     display: inline-block;
@@ -46,6 +50,10 @@ nav#fixed-nav{
   #slide-out{
     /*position: inherit;*/
     z-index: 5
+  }
+  .icons{
+    width: 70%;
+    margin: 5px auto;
   }
 div.avatar{
   position: absolute;
