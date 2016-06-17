@@ -15,3 +15,11 @@ portfolio.controller('aboutController', function(projectFactory){
   this.errors = []
 
 })
+portfolio.controller('adminController', function(projectFactory){
+  console.log('in aboutController')
+  var that = this
+  this.
+
+  this.errors = []
+
+})

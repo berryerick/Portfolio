@@ -1,11 +1,9 @@
 /* variables */
 
 :root{
+  --main-color:
+}
 
-}
-* {
-  /*font-family: 'avenir', sans-serif;*/
-}
 body{
   position: fixed;
   width: 100vw;
@@ -13,6 +11,7 @@ body{
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 h5{
   font-weight: 300;
   font-variant: small-caps;
@@ -22,6 +21,7 @@ nav#fixed-nav{
   position: absolute;
   z-index: 3;
   min-width: 290px;
+  min-height: 50px;
 }
 
   div.main-title{
@@ -75,6 +75,7 @@ height: 100vh;
 }
 nav{
   height: 8vh;
+  min-height: 50px;
 }
   .sidenav{
     margin-top: 30vh;
@@ -97,14 +98,21 @@ nav{
 ul.modules{
   height: 92vh;
   overflow-y: scroll;
-  /*padding-top: 10%;*/
+  /*padding-top: 2vh;*/
 }
 li.module{
+  /*margin-top: 2vh;*/
 }
+  div.module-content{
+    margin: 0;
+  }
   li.module div.module-right{
     max-height: 50vh;
     overflow-y: hidden;
+    vertical-align: top;
   }
     img.module-img{
-
+      /*vertical-align: top;*/
+      /*height: 100%;*/
+      /*width: auto;*/
     }
