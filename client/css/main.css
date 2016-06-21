@@ -61,6 +61,7 @@ nav#fixed-nav{
 div.avatar{
   position: absolute;
   margin-top: 10vh;
+  text-align: left;
 }
 #sidenav-overlay{
   position: relative;
