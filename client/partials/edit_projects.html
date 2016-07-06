@@ -1,0 +1,78 @@
+<div class="controller" ng-controller="editController as EC" >
+
+  <ul class="no-padding modules col s12 row">
+    <li class="module card content no-padding col s12 offset-m3 m8">
+        <!-- <form class="" action="/login" method="post"> -->
+          <div class="row module-content">
+            <div class="module-left col s12">
+              <div class="card-content">
+
+                <h4 class="card-title">Edit projects</h4>
+
+                <div class="row valign-wrapper col s10">
+                  <!-- <label class="col s4 right-align valign" >Password: </label> -->
+                  <!-- <input ng-model="AC.admin.password" class="col s8 valign left-align" type="text" name="admin.password"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <!-- <button ng-click="AC.login()" class="teal-text btn-flat waves-effect" type="button" >Login</button> -->
+          </div>
+        <!-- </form> -->
+
+
+    </li>
+    <li class="module card content no-padding col s12 offset-m3 m8">
+        <!-- <form class="" action="/login" method="post"> -->
+          <div class="row module-content">
+            <div class="module-left col s12">
+              <div class="card-content">
+
+                <h4 class="card-title">New Project</h4>
+                <form class="row col s10" action="index.html" method="post">
+                  <div class="form-field">
+                    <label for="project.title"></label>
+                    <input type="text" name="project.title" ng-model="EC.newproject.title" >
+                  </div>
+                  <div class="form-field">
+                    <label for="project.abstract">abstract</label>
+                    <textarea type="text" name="project.abstract" ng-model="EC.newproject.abstract" ></textarea>
+                  </div>
+                  <div class="form-field">
+                    <label for="project.img">Image</label>
+                    <input type="file" name="project.img" ng-model="EC.newproject.img">
+                  </div>
+                  <div class="form-field">
+                    <label for="project.link1">link1 title</label>
+                    <input type="text" name="project.link1.title" ng-model="EC.newproject.links[0].title">
+                    <label for="project.link1">link1 url</label>
+                    <input type="text" name="project.link1.url" ng-model="EC.newproject.links[0].url">
+                  </div>
+                  <div class="form-field">
+                    <label for="project.link2">link2 title</label>
+                    <input type="text" name="project.link1.title" ng-model="EC.newproject.links[1].title">
+                    <label for="project.link2">link2 url</label>
+                    <input type="text" name="project.link2.url" ng-model="EC.newproject.links[1].url">
+                  </div>
+
+                </form>
+                <div class="row valign-wrapper col s10">
+                  <!-- <label class="col s4 right-align valign" >Password: </label> -->
+                  <!-- <input ng-model="AC.admin.password" class="col s8 valign left-align" type="text" name="admin.password"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <!-- <button ng-click="AC.login()" class="teal-text btn-flat waves-effect" type="button" >Login</button> -->
+          </div>
+        <!-- </form> -->
+    </li>
+  </ul>
+</div>
+
+
+</div>

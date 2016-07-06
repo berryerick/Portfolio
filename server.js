@@ -4,7 +4,11 @@ var path = require('path')
 var app = express()
 
 app.use(express.static(__dirname + '/client'))
-app.use(bodyParser.urlencoded())
+// app.use(bodyParser.urlencoded())
+app.use(bodyParser.json({
+  extended: true
+}));
+
 
 // db models
 require('./server/config/mongoose.js')

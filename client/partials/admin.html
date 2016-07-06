@@ -1,17 +1,30 @@
 <div class="controller" ng-controller="adminController as AC" >
+
   <ul class="no-padding modules col s12 row">
+    <li class="module card content no-padding col s12 offset-m3 m8">
+        <!-- <form class="" action="/login" method="post"> -->
+          <div class="row module-content">
+            <div class="module-left col s12">
+              <div class="card-content">
 
+                <h4 class="card-title">Admin Login</h4>
+
+                <div class="row valign-wrapper col s10">
+                  <label class="col s4 right-align valign" >Password: </label>
+                  <input name="admin" ng-model="AC.admin.password" class="col s8 valign left-align" type="text" name="admin.password">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <a ng-click="AC.login()" class="teal-text btn-flat waves-effect" >Login</a>
+          </div>
+        <!-- </form> -->
+
+
+    </li>
   </ul>
-<div class="row">
-  <form class="project card col s12" action="/projects" method="post">
-    <div class="row">
-      <div class="input field col s6">
-
-      </div>
-    </div>
-    <input type="text" name="project.name">
-    <input type="text" name="project.description" value="">
-  </form>
 </div>
 
 

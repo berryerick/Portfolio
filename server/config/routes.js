@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
 var projects = require('../controllers/projects.js')
+var admins = require('../controllers/admins.js')
 
 module.exports = function(app){
 
@@ -14,6 +15,10 @@ module.exports = function(app){
   // }),
   // app.post('/projects', function(req,res){
   //   projects.index(req,res)
-  // })
+  // }),
+  app.post('/login', function(req,res){
+    console.log('req.body', req.body);
+    admins.login(req,res)
+  })
 
 }
