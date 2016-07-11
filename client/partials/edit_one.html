@@ -1,0 +1,77 @@
+<div class="controller" ng-controller="editOneController as EC" >
+
+  <ul class="no-padding modules col s12 row">
+
+
+<!-- title block -->
+    <!-- <li class="module card content no-padding col s12 offset-m3 m8">
+          <div class="row module-content">
+            <div class="module-left col s12">
+              <div class="card-content">
+                <h4 class="card-title">Edit projects</h4>
+                <button class="teal-text btn-flat waves-effect" ng-click="EC.logout()">logout</button>
+              </div>
+            </div>
+          </div>
+    </li> -->
+
+<!-- update a project -->
+    <li class="module card  no-padding col s12 offset-m3 m8">
+        <!-- {{EC}} -->
+          <div class="row module-content">
+            <div class="module-left col s12">
+              <div class="card-content">
+
+                <h4 class="card-title">Update <span ng-bind="EC.project.title"></span></h4>
+                <form class="row col s10 offset-s1">
+                  <div class="input-field">
+                    <label class="active" for="project-title">Title</label>
+                    <input type="text" name="project-title" ng-model="EC.project.title" value="{{EC.project.title}}">
+                  </div>
+                  <div class="input-field row">
+                    <label class="active" for="project-abstract">abstract</label>
+                    <textarea class="materialize-textarea" name="project-abstract" ng-model="EC.project.abstract" ng-bind="EC.project.abstract"></textarea>
+                  </div>
+                  <div class="input-field">
+                      <label class="active" for="project-img">Image</label>
+                      <input type="text" name="newproject-img" ng-model="EC.project.image" required>
+                      <img src="{{EC.project.image}}" alt="Project image" />
+                  </div>
+                  <div class="input-field">
+                    <label class="active"  for="project-link1-title">link1 title</label>
+                    <input  type="text" name="project-link1-title" ng-model="EC.project.links[0].title">
+                  </div>
+                  <div class="input-field">
+                    <label class="active" for="project-link1-url">link1 url</label>
+                    <input type="text" name="project-link1-url" ng-model="EC.project.links[0].url">
+                  </div>
+                  <div class="input-field">
+                    <label class="active" for="project-link2-title">link2 title</label>
+                    <input  type="text" name="project-link2-title" ng-model="EC.project.links[1].title">
+                  </div>
+                  <div class="input-field">
+                    <label class="active" for="project-link2-url">link2 url</label>
+                    <input type="text" name="project-link2-url" ng-model="EC.project.links[1].url">
+                  </div>
+                    <label class="active">category</label>
+
+                    <select class="browser-default" name="project-category" ng-model="EC.project.category[0]">
+                      <option value="" disabled selected>select a category</option>
+                      <option value="about">about</option>
+                      <option value="projects">projects</option>
+                      <option value="design">design</option>
+                    </select>
+                  <div class="col s12">
+                    <button class="btn teal white-text" ng-click="EC.update()" name="button">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    </li>
+
+  </ul>
+</div>
+
+
+</div>

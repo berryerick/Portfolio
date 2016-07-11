@@ -3,8 +3,9 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
   factory.allprojects = []
   factory.getprojects = function(){
     $http.get('/projects').success(function(output){
+
       factory.allprojects = output
-      console.log('user factory index method output: ', output)
+      console.log('project factory index method output: ', output)
     })
   }
   factory.getprojects()
@@ -41,6 +42,16 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
       }
       callback()
     })
+  }
+  factory.delete = function(id, callback){
+    console.log('deleting', id);
+    for (var i = 0; i < this.allprojects.length; i++) {
+      if (this.allprojects[i]._id == id) {
+        this.allprojects.splice(i, 1)
+        console.log(this.allprojects);
+      }
+    }
+    callback()
   }
 
   return factory

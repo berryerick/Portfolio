@@ -18,6 +18,9 @@ portfolio.config(function($routeProvider){
   .when('/edit_projects',{
     templateUrl: "/partials/edit_projects.html"
   })
+  .when('/edit/:id',{
+    templateUrl: "/partials/edit_one.html"
+  })
   .otherwise({
     redirectTo: '/about'
   })

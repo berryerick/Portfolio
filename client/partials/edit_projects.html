@@ -2,69 +2,147 @@
 
   <ul class="no-padding modules col s12 row">
 
-    <li class="module card content no-padding col s12 offset-m3 m8">
-          <div class="row module-content">
-            <div class="module-left col s12">
-              <div class="card-content">
 
-                <h4 class="card-title">Edit projects</h4>
-                <button class="teal-text btn-flat waves-effect" ng-click="EC.logout()">logout</button>
-              </div>
-            </div>
+<!-- title block -->
+    <li class="module card content no-padding col s12 offset-m3 m8">
+      <div class="row module-content">
+        <div class="module-left col s12">
+          <div class="card-content">
+            <h4 class="card-title">Edit projects</h4>
+            <button class="teal-text btn-flat waves-effect" ng-click="EC.logout()">logout</button>
           </div>
+        </div>
+      </div>
+    </li>
+
+<!-- create a new project -->
+    <li class="module card  no-padding col s12 offset-m3 m8">
+        {{EC}}
+      <div class="row module-content">
+        <div class="module-left col s12">
+          <div class="card-content">
+
+            <h4 class="card-title">New Project</h4>
+            <form class="row col s10 offset-s1">
+              <div class="input-field">
+                <label for="project-title">Title</label>
+                <input type="text" name="project-title" ng-model="EC.newproject.title" >
+              </div>
+              <div class="input-field row">
+                <label for="project-abstract">abstract</label>
+                <textarea class="materialize-textarea" name="project-abstract" ng-model="EC.newproject.abstract" ></textarea>
+              </div>
+              <div class="input-field">
+                  <label for="newproject-img">Image</label>
+                  <input type="text" name="newproject-img" ng-model="EC.newproject.image" required>
+              </div>
+              <div class="input-field">
+                <label  for="project-link1-title">link1 title</label>
+                <input  type="text" name="project-link1-title" ng-model="EC.newproject.links[0].title">
+              </div>
+              <div class="input-field">
+                <label for="project-link1-url">link1 url</label>
+                <input type="text" name="project-link1-url" ng-model="EC.newproject.links[0].url">
+              </div>
+              <div class="input-field">
+                <label for="project-link2-title">link2 title</label>
+                <input  type="text" name="project-link2-title" ng-model="EC.newproject.links[1].title">
+              </div>
+              <div class="input-field">
+                <label for="project-link2-url">link2 url</label>
+                <input type="text" name="project-link2-url" ng-model="EC.newproject.links[1].url">
+              </div>
+                <label>category</label>
+
+                <select class="browser-default" name="project-category" ng-model="EC.newproject.category">
+                  <option value="" disabled selected>select a category</option>
+                  <option value="about">about</option>
+                  <option value="projects">projects</option>
+                  <option value="design">design</option>
+                </select>
+              <div class="col s12">
+                <button class="btn teal white-text" ng-click="EC.create()" name="button">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+
+<!--projects tables -->
+    <li class="module card  no-padding col s12 offset-m3 m8">
+      <div class="row module-content">
+        <div class="module-left col s12">
+          <div class="card-content">
+            <h4 class="card-title">About</h4>
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>actions</th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="project in EC.about">
+                  <td ng-bind="project.title"></td>
+                  <td >
+                    <a href="#/edit/{{project._id}}">edit</a>
+                    <a href="" ng-click="EC.delete(project._id)">delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </li>
 
     <li class="module card  no-padding col s12 offset-m3 m8">
-        {{EC}}
-          <div class="row module-content">
-            <div class="module-left col s12">
-              <div class="card-content">
-
-                <h4 class="card-title">New Project</h4>
-                <form class="row col s10 offset-s1">
-                  <div class="input-field">
-                    <label for="project-title">Title</label>
-                    <input type="text" name="project-title" ng-model="EC.newproject.title" >
-                  </div>
-                  <div class="input-field row">
-                    <label for="project-abstract">abstract</label>
-                    <textarea class="materialize-textarea" name="project-abstract" ng-model="EC.newproject.abstract" ></textarea>
-                  </div>
-                  <div class="input-field">
-                      <label for="newproject-img">Image</label>
-                      <input type="text" name="newproject-img" ng-model="EC.newproject.image" required>
-                  </div>
-                  <div class="input-field">
-                    <label  for="project-link1-title">link1 title</label>
-                    <input  type="text" name="project-link1-title" ng-model="EC.newproject.links[0].title">
-                  </div>
-                  <div class="input-field">
-                    <label for="project-link1-url">link1 url</label>
-                    <input type="text" name="project-link1-url" ng-model="EC.newproject.links[0].url">
-                  </div>
-                  <div class="input-field">
-                    <label for="project-link2-title">link2 title</label>
-                    <input  type="text" name="project-link2-title" ng-model="EC.newproject.links[1].title">
-                  </div>
-                  <div class="input-field">
-                    <label for="project-link2-url">link2 url</label>
-                    <input type="text" name="project-link2-url" ng-model="EC.newproject.links[1].url">
-                  </div>
-                    <label>category</label>
-
-                    <select class="browser-default" name="project-category" ng-model="EC.newproject.category">
-                      <option value="" disabled selected>select a category</option>
-                      <option value="about">about</option>
-                      <option value="projects">projects</option>
-                      <option value="design">design</option>
-                    </select>
-                  <div class="col s12">
-                    <button class="btn teal white-text" ng-click="EC.create()" name="button">Save</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+      <div class="row module-content">
+        <div class="module-left col s12">
+          <div class="card-content">
+            <h4 class="card-title">Web Projects</h4>
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>actions</th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="project in EC.projects">
+                  <td ng-bind="project.title"></td>
+                  <td >
+                    <a href="#/edit/{{project._id}}">edit</a>
+                    <a href="" ng-click="EC.delete(project._id)">delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="module card  no-padding col s12 offset-m3 m8">
+      <div class="row module-content">
+        <div class="module-left col s12">
+          <div class="card-content">
+            <h4 class="card-title">Design</h4>
+            <table>
+              <thead>
+                <th>Name</th>
+                <th>actions</th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="project in EC.design">
+                  <td ng-bind="project.title"></td>
+                  <td >
+                    <a href="#/edit/{{project._id}}">edit</a>
+                    <a href="" ng-click="EC.delete(project._id)">delete</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </li>
   </ul>
 </div>
