@@ -18,9 +18,9 @@ adminSchema.pre('save', function(done){
   })
 })
 
-adminSchema.methods.valid = function(password, hash){
+adminSchema.methods.valid = function(password, hash, callback){
   console.log(' in validate function', hash, password)
-  return bcrypt.compareSync(password, hash)
+  callback(bcrypt.compareSync(password, hash))
 }
 
 var Admin = mongoose.model("Admin", adminSchema)

@@ -20,5 +20,12 @@ module.exports = function(app){
     console.log('req.body', req.body);
     admins.login(req,res)
   })
+  app.get('/projects', function(req,res) {
+    projects.index(req, res)
+  })
+  app.post('/projects', function(req,res){
+    console.log('req.body', req.body);
+    projects.create(req,res)
+  })
 
 }

@@ -23,6 +23,29 @@
           <a class="teal-text btn-flat waves-effect" href="https://www.linkedin.com/in/erick-berry">LinkedIn</a>
         </div>
     </li>
+
+    <li class="module card content no-padding col s12 offset-m3 m8" ng-repeat="project in AC.projects">
+        <div class="row module-content">
+          <div class="module-left col s12 l5">
+            <div class="card-content">
+              <h4 class="card-title" ng-bind="project.title"></h4>
+
+              <p ng-bind="project.abstract">
+              </p>
+
+            </div>
+          </div>
+
+          <div class="card-image module-right no-padding col s12 l7 valign-wrapper">
+            <img class="module-img col s12 no-padding valign" src="{{project.image}}" alt='{{project.image}}' />
+          </div>
+        </div>
+        <div class="card-action">
+          <a ng-repeat="link in project.links" class="teal-text btn-flat waves-effect" href="{{link.url}}">{{link.title}}</a>
+        </div>
+    </li>
+
+
     <li class="module card content no-padding col s12 offset-m3 m8">
         <div class="card-content module-left col s12 l4">
           <h4 class="card-title">In Development</h4>
@@ -31,7 +54,7 @@
 
         </div>
         <div class="card-image module-right no-padding col s12 l8 valign-wrapper" >
-          <img class="module-img col s12 no-padding valign" src="/img/beach.jpg" alt="beach" />
+          <img class="module-img col s12 no-padding valign" src="https://drive.google.com/uc?export=download&id=1M2O69mGEQfh2L3-VdoRO11pz1vXaOPxSlg" alt="beach" />
         </div>
     </li>
 

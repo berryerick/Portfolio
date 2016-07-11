@@ -35,16 +35,16 @@ module.exports = {
           })
         } else {
           console.log('comparing', req.body, admins[0]);
-          var compare = admin.valid(req.body.password, admins[0].password)
-          console.log("compare: ", compare);
-          if (compare) {
-            console.log('comparing passwords success');
-            result = {status: true, admin: admins[0]}
-          }
-          else {
-            console.log('comparing passwords failed');
-            result = {status: false, messages: err}
-          }
+          admin.valid(req.body.password, admins[0].password, function(compare){
+            if (compare) {
+              console.log('comparing passwords success');
+              result = {status: true, admin: admins[0]}
+            }
+            else {
+              console.log('comparing passwords failed');
+              result = {status: false, messages: err}
+            }
+          })
         }
         console.log(result);
         res.json(result)
