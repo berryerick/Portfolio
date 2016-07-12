@@ -43,13 +43,14 @@ portfolio.controller('projectsController', function(projectFactory){
 
   this.getprojects = function(){
     var array = []
-    for (var i = that.allprojects.length -1; i >= 0; i--) {
-      console.log(that.allprojects[i]);
-      if (that.allprojects[i].category == "projects") {
-        array.push(that.allprojects[i])
+    for (var i = projectFactory.allprojects.length -1; i >= 0; i--) {
+      console.log(projectFactory.allprojects[i]);
+      if (projectFactory.allprojects[i].category == "projects") {
+        array.push(projectFactory.allprojects[i])
       }
     }
     that.projects = array
+    console.log('***************', that.projects)
   }
 
   if (!projectFactory.allprojects) {
