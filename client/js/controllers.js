@@ -139,12 +139,14 @@ portfolio.controller('editController', function(projectFactory, $location){
 
   this.create = function(){
     console.log(this.newproject);
-    this.allprojects.push(this.newproject)
-    this.getprojects()
+    // this.allprojects.push(this.newproject)
+    // this.getprojects()
 
     projectFactory.create(that.newproject, function(){
       that.allprojects = projectFactory.allprojects
       that.getprojects()
+      that.newproject = { links: [] }
+
     })
   }
   this.delete = function(id){
