@@ -2,29 +2,33 @@ portfolio.controller('mainController', function(projectFactory){
   console.log('in mainController')
   var that = this
   this.errors = []
+  projectFactory.getprojects(function(){
+    that.allprojects = projectFactory.allprojects
+  })
 })
 
 portfolio.controller('aboutController', function(projectFactory){
   console.log('in aboutController')
   var that = this
+  this.errors = []
   this.projects = []
-  console.log("projectFactory.allprojects", projectFactory.allprojects);
-  this.getprojects = function(){
+
+  that.getprojects = function(){
     var array = []
-    for (var i = projectFactory.allprojects.length -1; i >= 0; i--) {
-      console.log(projectFactory.allprojects[i]);
-      if (projectFactory.allprojects[i].category == "about") {
-        array.push(projectFactory.allprojects[i])
+    for (var i = that.allprojects.length -1; i >= 0; i--) {
+      console.log(that.allprojects[i]);
+      if (that.allprojects[i].category == "about") {
+        array.push(that.allprojects[i])
       }
     }
-    this.projects = array
-    // callback()
+    that.projects = array
   }
-  this.getprojects()
-  console.log(this.projects);
 
+  projectFactory.getprojects(function(){
+    that.allprojects = projectFactory.allprojects
+    that.getprojects()
+  })
 
-  this.errors = []
 
 })
 portfolio.controller('projectsController', function(projectFactory){
@@ -34,15 +38,19 @@ portfolio.controller('projectsController', function(projectFactory){
 
   this.getprojects = function(){
     var array = []
-    for (var i = projectFactory.allprojects.length -1; i >= 0; i--) {
-      console.log(projectFactory.allprojects[i]);
-      if (projectFactory.allprojects[i].category == "projects") {
-        array.push(projectFactory.allprojects[i])
+    for (var i = that.allprojects.length -1; i >= 0; i--) {
+      console.log(that.allprojects[i]);
+      if (that.allprojects[i].category == "projects") {
+        array.push(that.allprojects[i])
       }
     }
-    this.projects = array
+    that.projects = array
   }
-  this.getprojects()
+
+  projectFactory.getprojects(function(){
+    that.allprojects = projectFactory.allprojects
+    that.getprojects()
+  })
 
 })
 portfolio.controller('designsController', function(projectFactory){
@@ -57,10 +65,13 @@ portfolio.controller('designsController', function(projectFactory){
         array.push(projectFactory.allprojects[i])
       }
     }
-    this.projects = array
-  }
-  this.getprojects()
 
+    that.projects = array
+  }
+  projectFactory.getprojects(function(){
+    that.allprojects = projectFactory.allprojects
+    that.getprojects()
+  })
 })
 portfolio.controller('adminController', function(projectFactory){
   console.log('in adminController')
@@ -111,11 +122,14 @@ portfolio.controller('editController', function(projectFactory, $location){
   }
   this.getprojects()
 
-  this.create = function (){
+  this.create = function(){
     console.log(this.newproject);
-    // console.log(this.newproject);
+    this.allprojects.push(this.newproject)
+    this.getprojects()
+
     projectFactory.create(that.newproject, function(){
       that.allprojects = projectFactory.allprojects
+      that.getprojects()
     })
   }
   this.delete = function(id){
@@ -138,10 +152,6 @@ portfolio.controller('editOneController', function(projectFactory, $location, $r
 
   this.errors = []
 
-  this.logout = function(){
-    projectFactory.logout()
-  }
-
   this.getproject = function(){
     console.log($routeParams.id);
     for (var i = projectFactory.allprojects.length -1; i >= 0; i--) {
@@ -155,10 +165,14 @@ portfolio.controller('editOneController', function(projectFactory, $location, $r
   this.getproject()
 
   this.update = function(){
-    console.log(this.project);
-    projectFactory.update(that.project, function(){
-      $location('/edit_projects')
+    console.log("updating",this.project);
+    projectFactory.update( that.project, $routeParams.id, function(){
+      $location.path('/edit_projects')
     })
+  }
+
+  this.logout = function(){
+    projectFactory.logout()
   }
 
 })

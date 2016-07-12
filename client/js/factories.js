@@ -1,14 +1,13 @@
 portfolio.factory('projectFactory', function($http, $location, $routeParams){
   var factory = {}
   factory.allprojects = []
-  factory.getprojects = function(){
+  factory.getprojects = function(callback){
     $http.get('/projects').success(function(output){
-
       factory.allprojects = output
       console.log('project factory index method output: ', output)
     })
+    callback()
   }
-  factory.getprojects()
 
   factory.login = function(info, callback){
     // console.log("in login with", info);
@@ -34,8 +33,8 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
     callback(factory.allprojects)
   }
 
-  factory.create= function (data, callback) {
-    $http.post('/projects', data).success(function(output){
+  factory.create = function (data, callback) {
+    $http.post( '/projects', data ).success( function( output ) {
       console.log("post /projects output", output);
       if (output.saved) {
         factory.allprojects.push(output.project)
@@ -43,6 +42,15 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
       callback()
     })
   }
+
+  factory.update = function( data, id, callback ) {
+    console.log( "updating", data );
+    $http.patch( '/projects/'+ id, data ).success( function( output ) {
+      console.log( "patch output",output );
+    })
+    callback()
+  }
+
   factory.delete = function(id, callback){
     console.log('deleting', id);
     for (var i = 0; i < this.allprojects.length; i++) {
@@ -51,6 +59,9 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
         console.log(this.allprojects);
       }
     }
+    $http.delete('/projects/'+id).success(function (output) {
+      console.log(output);
+    })
     callback()
   }
 

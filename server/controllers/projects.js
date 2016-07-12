@@ -25,6 +25,26 @@ module.exports = {
 
       }
     })
+  },
+  update: function (req,res) {
+    console.log('updating', req.params.id, req.body);
+    Project.update({_id: req.params.id}, {$set: req.body}, function (err, project) {
+      if (err) {
+        res.json({saved: false, messages: err})
+      }
+      else{
+        res.json({saved: true, project: project})
+      }
+    })
+  },
+
+  delete: function (req,res){
+    console.log('deleting', req.params.id);
+    Project.remove({_id: req.params.id}, function(err){
+      if (err) {
+        console.log(err);
+      }
+    })
   }
 
 
