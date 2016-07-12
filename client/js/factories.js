@@ -1,9 +1,12 @@
 portfolio.factory('projectFactory', function($http, $location, $routeParams){
   var factory = {}
-  factory.allprojects = []
   factory.getprojects = function(callback){
     $http.get('/projects').success(function(output){
       factory.allprojects = output
+      for (var i = 0; i < factory.allprojects.length; i++) {
+        // factory.allprojects[i].abstract.replace("/")
+        // factory.allprojects[i].abstract = "<p>" + factory.allprojects[i].abstract + "</p>"
+      }
       console.log('project factory index method output: ', output)
     })
     callback()
@@ -29,8 +32,7 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
   }
 
   factory.index = function(callback){
-    factory.getprojects()
-    callback(factory.allprojects)
+    factory.getprojects(callback)
   }
 
   factory.create = function (data, callback) {

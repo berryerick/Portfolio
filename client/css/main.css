@@ -1,15 +1,10 @@
-/* variables */
-
-:root{
-  --main-color:
-}
 
 body{
   position: fixed;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 h5{
@@ -30,7 +25,6 @@ nav#fixed-nav{
     overflow: hidden;
   }
   #menu{
-    /*height: 100%;*/
   }
   a.button-collapse{
     margin-right: 0;
@@ -39,9 +33,7 @@ nav#fixed-nav{
     display: inline-block;
     font-weight: 200;
     max-height: 100%;
-    /*min-width: 150px;*/
     margin: auto 0px;
-    /*overflow-y: hidden;*/
   }
   #my-title{
     display: inline-block;
@@ -51,7 +43,6 @@ nav#fixed-nav{
     margin: 0;
   }
   #slide-out{
-    /*position: inherit;*/
     z-index: 5;
   }
   .icons{
@@ -63,6 +54,9 @@ div.avatar{
   margin-top: 10vh;
   text-align: left;
 }
+  div.avatar img{
+    /*min-width: 70px;*/
+  }
 #sidenav-overlay{
   position: relative;
   z-index: 1
@@ -81,7 +75,6 @@ nav{
   .sidenav{
     margin-top: 30vh;
     position: absolute;
-    /*box-shadow: 0 1px 3px black;*/
     border-radius: 0;
   }
     .nav-button{
@@ -97,23 +90,25 @@ nav{
       background-color: rgba(255,255,255,0.3);
     }
 ul.modules{
-  height: 92vh;
+  height: 90vh;
   overflow-y: scroll;
-  /*padding-top: 2vh;*/
 }
 li.module{
-  /*margin-top: 2vh;*/
+  margin-top: 2vh;
 }
   div.module-content{
     margin: 0;
   }
+  div.module-left{}
+    div.module-left p{
+      white-space: pre-wrap;
+    }
   li.module div.module-right{
-    max-height: 50vh;
+    /*max-height: 50vh;*/
+    /*min-height: 350px;*/
+    height: contain;
     overflow-y: hidden;
     vertical-align: top;
   }
     img.module-img{
-      /*vertical-align: top;*/
-      /*height: 100%;*/
-      /*width: auto;*/
     }

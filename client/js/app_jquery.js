@@ -8,7 +8,9 @@ $(document).ready(function(){
   console.log("current location for button", location.hash.slice(2));
   $(window).on('hashchange', function(){
     $(".sidenav .nav-button").removeClass("active");
-    $(".sidenav .nav-button#nav"+location.hash.slice(2)).addClass("active")
+    if (location.hash.slice(2) == "design" || location.hash.slice(2) == "about" || location.hash.slice(2) == 'projects') {
+      $(".sidenav .nav-button#nav"+location.hash.slice(2)).addClass("active")
+    }
   })
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();

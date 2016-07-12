@@ -24,10 +24,15 @@ portfolio.controller('aboutController', function(projectFactory){
     that.projects = array
   }
 
-  projectFactory.getprojects(function(){
+  if (!projectFactory.allprojects) {
+    projectFactory.getprojects(function(){
+      that.allprojects = projectFactory.allprojects
+      that.getprojects()
+    })
+  } else {
     that.allprojects = projectFactory.allprojects
     that.getprojects()
-  })
+  }
 
 
 })
@@ -47,10 +52,15 @@ portfolio.controller('projectsController', function(projectFactory){
     that.projects = array
   }
 
-  projectFactory.getprojects(function(){
+  if (!projectFactory.allprojects) {
+    projectFactory.getprojects(function(){
+      that.allprojects = projectFactory.allprojects
+      that.getprojects()
+    })
+  } else {
     that.allprojects = projectFactory.allprojects
     that.getprojects()
-  })
+  }
 
 })
 portfolio.controller('designsController', function(projectFactory){
@@ -65,13 +75,18 @@ portfolio.controller('designsController', function(projectFactory){
         array.push(projectFactory.allprojects[i])
       }
     }
-
     that.projects = array
   }
-  projectFactory.getprojects(function(){
+  if (!projectFactory.allprojects) {
+    projectFactory.getprojects(function(){
+      that.allprojects = projectFactory.allprojects
+      that.getprojects()
+    })
+  } else {
     that.allprojects = projectFactory.allprojects
     that.getprojects()
-  })
+  }
+
 })
 portfolio.controller('adminController', function(projectFactory){
   console.log('in adminController')
