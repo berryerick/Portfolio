@@ -4,7 +4,8 @@ body{
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
+
 }
 
 h5{
@@ -82,19 +83,44 @@ nav{
       border-radius: none;
       margin: 0;
       padding: 10px;
+      background: none;
+      -webkit-transition: background .2s cubic-bezier(0.4, 0.0, 0.2, 1);;
+      transition:         background .2s cubic-bezier(0.4, 0.0, 0.2, 1);;
     }
     .nav-button:hover{
-      background-color: rgba(0, 0, 0, 0.1);
+
+      /*background-color: rgba(0, 0, 0, 0.1);*/
+      background: rgba(0,0,0,0.1);
+      /*background: -moz-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.1)), color-stop(100%, rgba(0,0,0,0)));
+      background: -webkit-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      background: -o-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      background: -ms-linear-gradient(left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);*/
+      /*background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);*/
+      /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );*/
+
     }
     .active{
-      background-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.3);
+      background: -moz-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0.1)), color-stop(100%, rgba(255,255,255,0)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
     }
 ul.modules{
   height: 90vh;
   overflow-y: scroll;
+  padding-top: 2vh !important;
 }
-li.module{
-  margin-top: 2vh;
+.module{
+  /*margin-top: 2vh;*/
+  margin-bottom: 2vh !important;
+  margin-top: 0;
+  /*border-bottom: 1px solid rgba(160, 160, 160, 0.2);*/
+  /*padding-bottom: 5vh !important;*/
 }
   div.module-content{
     margin: 0;
@@ -103,7 +129,7 @@ li.module{
     div.module-left p{
       white-space: pre-wrap;
     }
-  li.module div.module-right{
+  .module div.module-right{
     /*max-height: 50vh;*/
     /*min-height: 350px;*/
     height: contain;

@@ -1,42 +1,22 @@
 <div class="controller" ng-controller="aboutController as AC" >
-  <ul class="no-padding modules col s12 row">
-
-
-    <li class="module card content no-padding col s12 offset-m3 m8" ng-repeat="project in AC.projects">
+  <ul class="no-padding modules col s12 row offset-m3 m8">
+    <li ng-repeat="project in AC.projects">
+      <div class="module card content no-padding col s12 " >
         <div class="row module-content">
           <div class="module-left col s12 l5">
             <div class="card-content">
               <h4 class="card-title" ng-bind="project.title"></h4>
-
-              <p>{{project.abstract}}
-              </p>
-
+              <p ng-bind="project.abstract"></p>
             </div>
           </div>
-
           <div class="card-image module-right no-padding col s12 l7 valign-wrapper">
             <img class="module-img col s12 no-padding valign" src="{{project.image}}" alt='{{project.image}}' />
           </div>
         </div>
         <div class="card-action">
-          <a  ng-repeat="link in project.links"class="teal-text btn-flat waves-effect" href="{{link.url}}"><span ng-bind="link.title"></span></a>
+          <a ng-repeat="link in project.links" class="teal-text btn-flat waves-effect" href="{{link.url}}"><span ng-bind="link.title"></span></a>
         </div>
+      </div>
     </li>
-
-
-    <!-- <li class="module card content no-padding col s12 offset-m3 m8">
-        <div class="card-content module-left col s12 l4">
-          <h4 class="card-title">In Development</h4>
-
-          <p class="">Awesome Projects to be found here soon!!</p>
-
-        </div>
-        <div class="card-image module-right no-padding col s12 l8 valign-wrapper" >
-          <img class="module-img col s12 no-padding valign" src="https://drive.google.com/uc?export=download&id=1M2O69mGEQfh2L3-VdoRO11pz1vXaOPxSlg" alt="beach" />
-        </div>
-    </li> -->
-
-
   </ul>
-
 </div>

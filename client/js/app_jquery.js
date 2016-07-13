@@ -12,6 +12,4 @@ $(document).ready(function(){
       $(".sidenav .nav-button#nav"+location.hash.slice(2)).addClass("active")
     }
   })
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
 })

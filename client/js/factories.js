@@ -1,15 +1,24 @@
 portfolio.factory('projectFactory', function($http, $location, $routeParams){
   var factory = {}
-  factory.getprojects = function(callback){
+  factory.index = function(callback){
     $http.get('/projects').success(function(output){
       factory.allprojects = output
+      factory.projects = []
+      factory.design = []
+      factory.about = []
+
       for (var i = 0; i < factory.allprojects.length; i++) {
-        // factory.allprojects[i].abstract.replace("/")
-        // factory.allprojects[i].abstract = "<p>" + factory.allprojects[i].abstract + "</p>"
+        // console.log(this.allprojects[i]);
+        if (factory.allprojects[i].category == "projects") {
+          factory.projects.push(factory.allprojects[i])
+        }else if (factory.allprojects[i].category == "design") {
+          factory.design.push(factory.allprojects[i])
+        }else if (factory.allprojects[i].category == "about") {
+          factory.about.push(factory.allprojects[i])
+        }
       }
-      console.log('project factory index method output: ', output)
+      callback()
     })
-    callback()
   }
 
   factory.login = function(info, callback){
@@ -26,13 +35,10 @@ portfolio.factory('projectFactory', function($http, $location, $routeParams){
       callback()
     })
   }
+
   factory.logout = function(){
     sessionStorage.clear()
     $location.path("/admin")
-  }
-
-  factory.index = function(callback){
-    factory.getprojects(callback)
   }
 
   factory.create = function (data, callback) {

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html ng-app='portfolio'>
   <head>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta charset="utf-8">
+    <title>Erick Berry</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="./js/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-
     <script src="./js/jquery.min.js" charset="utf-8"></script>
     <script src="./js/materialize.js" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/materialize.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" type="image/png" href="/img/avatar.png">
-    <title>Erick Berry</title>
 
     <script src="./js/config.js"></script>
     <script src="./js/factories.js"></script>
@@ -25,24 +22,25 @@
 
   </head>
   <body>
-      <div ng-controller="mainController as MC">
-
-
         <nav id="fixed-nav"class="valign-wrapper row grey darken-3 ">
+
+<!-- nav button -->
           <a href="#" data-activates="slide-out" class="button-collapse s2 hide-on-med-and-up"><i class="material-icons left">menu</i></a>
 
+<!-- nav for small devices -->
           <ul id="slide-out" class="side-nav">
             <li><a href="#/about">About</a></li>
             <li><a href="#/projects">Projects</a></li>
             <li><a href="#/design">Design</a></li>
           </ul>
 
-          <!-- <div class="col s7 l7 center-align"> -->
+<!-- Title -->
           <div class="main-title valign-wrapper">
             <h4 class='white-text valign' id="my-name">Erick <span class="hide-on-small-only">Berry</span></h4>
             <h5 class="hide-on-med-and-down white-text valign" id="my-title">full stack web developer</h5>
           </div>
 
+<!-- Header Links -->
           <div class="col s6 m3 right-align">
             <a class="btn-floating  valign-wrapper" href="https://www.linkedin.com/profile/view?id=AAMAAAqjcDUB_U8WAzLMlFAcs42BVRW3fZF9dFY&trk=hp-identity-name">
               <i class="material-icons"><img class="icons responsive-img valign" src='/img/Wlinkedin.png' alt="" /></i>
@@ -59,9 +57,12 @@
 
 
         <div class="row" id="main-content">
-          <nav class="white">
 
+<!-- materialize nav for proper padding -->
+          <nav class="white">
           </nav>
+
+<!-- nav for med-large devices -->
           <div class="col m12 hide-on-small-only no-padding card sidenav teal lighten-2 white-text">
             <ul class="col m3 no-padding left">
               <li><a href="#/about" ><h5 id="navabout" class=" nav-button white-text waves-effect waves-light">about</h5></a></li>
@@ -79,15 +80,10 @@
             </div>
           </div>
 
-
+<!-- partial controller -->
           <div ng-view="">
-
           </div>
 
-
         </div>
-
-      </div>
-
   </body>
 </html>
