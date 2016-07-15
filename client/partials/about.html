@@ -1,7 +1,6 @@
 <div class="controller" ng-controller="aboutController as AC" >
-  <ul class="no-padding modules col s12 row offset-m3 m8">
-    <li ng-repeat="project in AC.projects">
-      <div class="module card content no-padding col s12 " >
+  <ul class="no-padding modules col s12 m8 offset-s0 offset-m3 row ">
+      <li class="module card content no-padding col s12 " ng-repeat="project in AC.projects">
         <div class="row module-content">
           <div class="module-left col s12 l5">
             <div class="card-content">
@@ -16,7 +15,6 @@
         <div class="card-action">
           <a ng-repeat="link in project.links" class="teal-text btn-flat waves-effect" href="{{link.url}}"><span ng-bind="link.title"></span></a>
         </div>
-      </div>
-    </li>
+      </li>
   </ul>
 </div>
